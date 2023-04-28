@@ -1,4 +1,3 @@
-a = float(input("First: "))
-b = float(input("Second: "))
-s = a+b
-print(s)
+course = "python"
+print(course.upper())
+print(course.find("t"))
