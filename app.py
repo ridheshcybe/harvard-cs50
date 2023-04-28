@@ -1,3 +1,2 @@
 course = "python"
-print(course.upper())
-print(course.find("t"))
+print(course.replace("t", "4"))
