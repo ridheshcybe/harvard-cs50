@@ -1,3 +1,4 @@
-birth_year = int(input("Enter your birth year: "))
-age = 2023-birth_year
-print(age)
+a = float(input("First: "))
+b = float(input("Second: "))
+s = a+b
+print(s)
