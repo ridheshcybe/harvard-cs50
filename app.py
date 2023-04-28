@@ -1,5 +1,4 @@
+first_name = 'John Smith'
 age = 20
-age = 30
-first_name = 'Mosh'
-is_online = False
+new = True
 print(age)
