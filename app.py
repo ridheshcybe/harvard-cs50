@@ -1,4 +1,5 @@
-price = 25
-print(price > 10 and price > 20)
-print(price > 50 or price < 26)
-print(not price > 50)
+price = 20
+if price > 20:
+    print("hella expenive")
+else:
+    print("cheap buy now")
