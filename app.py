@@ -1,7 +1,7 @@
-price = 25
-if price > 20:
-    print("hella expenive")
-elif price > 15:
-    print("kinda cheap wait")
+w = int(input("Weight: "))
+unit = input("(K)g or (L)bs: ")
+if unit.lower() == "k":
+    converted = w / 0.45
 else:
-    print("cheap buy now")
+    converted = w * 0.45
+print(converted)
