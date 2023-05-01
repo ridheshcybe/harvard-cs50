@@ -1,2 +1,2 @@
-for number in range(5):
-    print(number)
+numbers = (1, 2, 3, 3)
+print(numbers.count(3))
