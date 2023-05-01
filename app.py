@@ -1,3 +1,3 @@
-names = ["John", "John doe", "John f", "John carry", "John jona", "Johny d"]
-names[0] = "Jon"
-print(names[0:3])
+numbers = [1, 2, 3, 4, 5]
+numbers.clear()
+print(numbers)
