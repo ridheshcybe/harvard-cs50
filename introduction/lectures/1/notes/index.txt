@@ -1,0 +1,53 @@
+CS50x notes lecture 1
+
+what is computer science
+=> the study of information how do you represent it and how do you process it 
+
+unary 
+=> a fancy way of saying 1,2,3,4,5,6,7,8,9,10
+
+computers use binary
+
+what is a bit
+=> it is a 0 or a 1
+
+There are tiny switches in computers called transistors
+
+decimal system = (base 10)
+binary = (base 2)
+
+byte = 8 bits
+kb = Thousends's bites
+mb = Million's of bites
+gb = Billion's of bites
+
+mac's,pc,mobiles,laptops just use transistors in units of 8 (bytes)
+
+A is represented as 65
+B is represented as 66
+C is represented as 67
+
+ASCII => American Standard Code for Information Interchange
+
+Unicode is just a mapping of letters to numbers
+
+72, 73, 33
+H, I, !
+
+4036991106
+😂
+
+Skin tones for emojis just add a skin tone byte to the end of a emoji 
+example => 👦🏻
+
+RGB => Every Pixel has 3 number representing the color example => (0,0,255) 🟦, (0,255,0) 🟩
+
+A movie has 24 frames a second
+
+algorithm is a step by step instructions to solve a problem
+
+Boolean => YES/NO (TRUE/FALSE)
+
+Scrath is a graphical programming language
+
+input = argument

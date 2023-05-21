@@ -161,5 +161,8 @@ cython_debug/
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 .idea/
 
-# projects will be excluded
+# projects will be excluded (due to rule of cs50)
 projects
+
+# apple stuff
+.DS_Store
