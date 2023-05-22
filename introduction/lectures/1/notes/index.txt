@@ -51,3 +51,4 @@ Boolean => YES/NO (TRUE/FALSE)
 Scrath is a graphical programming language
 
 input = argument
+define = implement
