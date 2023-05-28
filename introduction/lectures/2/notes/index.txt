@@ -1,0 +1,20 @@
+source code => code that a human programmer writes but a machine can't understand
+machine code => code that a a machine can understand in a binary format
+compiler => a program that turns source code into machine code
+
+terminal windo provides a cli
+
+ClI => command line interface
+GUI => graphical user interface
+
+make command converts c code (source code) into binary code (machine code)
+
+./ => exectues a command example -> ./hello
+
+vscode is a text editor
+
+syntax highlighting highlights code
+
+\n is an escape sequence that creates a new line
+
+#include imports a library in c
