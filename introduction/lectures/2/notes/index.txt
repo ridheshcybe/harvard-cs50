@@ -18,3 +18,7 @@ syntax highlighting highlights code
 \n is an escape sequence that creates a new line
 
 #include imports a library in c
+
+data types =>bool,char,double,float,int,long,string,...
+
+variables store data
