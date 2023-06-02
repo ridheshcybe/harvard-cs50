@@ -22,3 +22,5 @@ syntax highlighting highlights code
 data types =>bool,char,double,float,int,long,string,...
 
 variables store data
+
+comment is a note used to help other people or yourself read code
