@@ -1,0 +1,87 @@
+make command uses clang under the hood
+
+the Default compiler output name is called a.out meaning assembler output
+In clang -o argument changes the name of the output file
+
+clang -o hello hello.c -lcs50
+the l in the above code stands for link code it makes the compiler know to fetch a library
+
+make automates this above code
+make is used globally
+
+there are 4 steps to compile a file:
+1. preprocessing
+2. compiling
+3. assembling
+4. linking
+
+/usr/include/ is just a folder that has header files
+
+somewhere in cs50 there exists a header (just a declaration)
+clang preprocesses the file by getting the header files and adding it to the line where #include is defined
+clang converts the file to a assembly file this is called compiling
+clang converts the assembly file into zeros and ones which is called assembling
+linking takes the zeros and ones of all libraries and links them all together
+
+a bug in a code is just a mistake where code does not run as intended
+
+a debugger is built-in in vscode
+
+types of data =>
+bool => 1 bytes
+int => 3 bytes
+long => 8 bytes
+float  => 4 bytes
+double => 8 bytes
+char => 1 bytes
+string=> ? bytes
+... etc
+
+array
+a array is a way of storing data back to back example => int scores[3]
+
+if we want to get an array of scores, we can use
+float average(int array[])
+
+chars are single bytes 
+example => char c1 = 'H';
+           char c2 = 'I';
+           char c3 = '!';
+
+string is an array of chars
+
+when you type a string there will be a extra byte that contain \0
+which will be counted as 0
+the \0 is called NUL
+
+array do not have a null character at the end
+
+command line arguments are argument given to the main int function
+eg:
+int main(int argc, string argv[]);
+
+cowsay creates ascii art of cows saying something
+
+exit status helps developers find out what type of error happend
+it is a number that means a certain info
+
+int is always there for main it returns an int
+
+main returns 0 by default
+
+encryption turns a sentence into gibberish
+
+the output of encyption is called ciphertext
+
+the algorithm is called a cipher
+
+eg:
+add a value to each letter and send the ciphertext
+
+eg:
+
+     ______
+1->  |    |
+     |    | -> IJ!
+HI!->|    |
+     ______
