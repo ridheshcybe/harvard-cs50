@@ -58,4 +58,47 @@ copy string
 
 NULL is at the start address of a computer
 
-Now with valgrind
+memory leaks are values that don't end usually
+
+Now with valgrind we can detect memory leaks
+
+pointers are orignally not pointing to any value
+
+*x goes to the value of x
+
+Now,
+🟩CODE_5_swap🟥
+
+Memory location
+-----------------------
+|     machine code    |
+|      globals        |
+|       heap          |
+|         ↓           |
+|         ☝️           |
+|       stack         |
+-----------------------
+
+the function go from the stack and up
+
+To fix the previous code 
+we pass the values by the address of the memory
+
+due to Limitations in memory we get
+stack overflow (when stack exceeds memory)
+and 
+heap overflow (when heap exceeds memory)
+
+commanly also known as buffer overflow
+
+Now lets create our own functions of get_int
+
+🟩CODE_5_get🟥
+
+Now for string
+
+🟩CODE_5_getstr🟥
+
+🟩h2🟥 file i/o
+
+File management
