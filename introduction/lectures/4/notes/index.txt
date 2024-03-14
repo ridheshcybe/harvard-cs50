@@ -1,0 +1,203 @@
+🟩h1🟥 CS50x notes lecture 4 
+
+🟩h2🟥 linear search
+
+go index to index | go box to box
+left to right | right to left
+
+Readable
+For each door from left to right
+If 50 is behind the door
+    Return true
+Return false
+
+turn it to closer to machine level
+For i from 0 to n-1
+If 50 is behind doors[i]
+    Return true
+Return false
+
+Binary search (it needs the array to be sorted)
+
+Readable
+If no doors left
+    Return false
+If 50 is behind middle door
+    Return true
+Else if 50 < middle door
+    Search left
+Else if 50 > middle door
+    Search right
+
+turn it to closer to machine level
+If no doors left
+    Return false
+If 50 is behind doors[middle]
+    Return true
+Else if 50 < doors[middle]
+    Search doors[0] to doors[middle - 1]
+Else if 50 > doors[middle]
+    Search doors[middle + 1] to doors[n - 1]
+
+middle +/- 1 removes the middle door because we already checked it
+
+🟩IMG_4_log-notation.png🟥
+Worst is O(n)
+Best is O(log^2n)
+
+we use O (Big O notation) to denote logartithms
+
+on the order of O(n) step is closer to looking at every element
+
+Types of logartithms (👇 is better)
+<ol>
+ <li>O(n^2)</li> 
+ <li>O(n log n)</li> 
+ <li>O(n)</li> 
+ <li>O(log n)</li> 
+ <li>O(1)</li>
+</ol>
+
+Big O is middle bound
+and θ (theta) is upper bound eg θ > O(1)
+and Ω (omega) is lower bound eg Ω < O(n^2)
+
+Now lets convert to code (Linear search)
+
+🟩CODE_4_search🟥
+
+Now this is the error code (can you find it?)
+
+🟩CODE_4_search-error🟥
+
+String is an array.
+
+Now == will not compare an array of strings to a array of characters
+
+To fix this you can do the following:
+🟩CODE_4_strcmp🟥
+
+The strcmp function return 0 when its equal
+
+Now,
+How do we write a phone book
+Let's make 2 arrays of strings one for the names and another for numbers
+
+Example
+🟩CODE_4_phonebook🟥
+in this ☝️ we search through the phone book using name and then print the number or else we print Not Found
+
+PseudoCode:
+1. Get name through user 
+2. Loop through phone book and find if name matches
+3. if name matches then print the number using the name index And end with success 🛑
+4. if not found print "Not Found" And exit with error 🛑
+
+But if we forget to add either the name or the phone number then it failes
+
+To combat this problem, we will try to create a data type in c
+
+Example:
+if a person data type has a name and a number then it would look like
+🟩CODE_4_datatypep🟥
+
+the typedef struct is mandatory
+you can name it at the end after the closing bracket (})
+
+you can use it like this 
+🟩CODE_4_datatype-example🟥
+
+Now lets add this to the code
+🟩CODE_4_updatedpb🟥
+
+this is good for encapsulation meaning that all is in a group it makes it easier to understand
+
+the dot in people.name selects the inner data so that would be people > name
+
+🟩h1🟥 Sorting
+
+Let's take an example:
+we need to sort this 7 2 5 4 1 6 0 3 to get 0 1 2 3 4 5 6 7 
+
+🟩h4🟥 Selection Sort
+
+we go through each and get the smallest number <- 1
+so in this example 0 will be first
+and then GO again to 1 until the array is sorted
+
+PseudoCode:
+For i from 0 to n-1
+    Find smallest number between numbers[i] and numbers[n-1]
+    Swap smallest number with numbers[i]
+
+🟩h4🟥 Bubble sort
+
+Loop through the numbers
+    Take two numbers 
+        if a number is smaller than b then switch the smaller one to the right 
+
+PseudoCode:
+For i from 0 to n-2
+    if numbers[i] and numbers[i+1] out of order
+       swap them
+if no swaps
+    quit
+
+we are doing n-2 because we are looking for the i+1 number
+
+🟩h4🟥 Sorting - Analyze
+
+Now lets anlayse it count the comparison needed to sort
+
+🟩h5🟥 Selection sort
+
+We have to loop through all the numbers
+
+First path to get the smallest number we have to (Worst case) loop through all the elements which is:
+(n-1)
+
+Second path to get the second smallest number we have to (Worst case) loop through all the elements except the one that we counted as the smallest it would be:
+(n-2)
+
+if we continue like this:
+
+=> (n-1)+(n-2)+(n-3)+...+1
+=> n(n-1)/2
+=> (n^2-n)/2
+=> n^2/2 - n/2
+
+This is how we compare algotithms
+
+To compare this we take the biggest value that will change which is: n^2
+therfore it is O(n^2)
+
+using THETA notation it will still be θ(n^2)
+
+🟩h5🟥 Bubble sort
+
+the algebra is:
+(n-1)*(n-1)
+n^2 - 1n - 1n + 2
+n^2 - 2n + 1
+
+therefore the largest factor is O(n^2)
+Therefore it dosen't matter these two sorting would be the same in big data
+Bubble sort is advantageous when the data is partially sorted
+
+To combat this we use another technique
+
+🟩h5🟥 Recursion
+
+When we call a function inside the same function that is called Recursion
+But if we don't have a exit condition then the loop will continue forever and we will get a Call stack error
+
+Let's do iteration example:
+
+Using basic code:
+🟩CODE_4_iteration🟥
+
+Using recursion:
+🟩CODE_4_recursion🟥
+
+🟩h4🟥 Merge Sort
+

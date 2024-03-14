@@ -1,0 +1,24 @@
+{
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/Thumbs.db": true,
+        "**/**/**.js":{
+            "when": "$(basename).ts"
+        }
+    },
+    "files.associations": {
+        "*.ejs": "html",
+        "string": "c",
+        "iosfwd": "c",
+        "__locale": "c",
+        "system_error": "c",
+        "typeinfo": "c",
+        "stdio.h": "c",
+        "string.h": "c"
+    },
+    "C_Cpp.errorSquiggles": "disabled"
+}

@@ -4,22 +4,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css"
+        integrity="sha512-Jk4AqjWsdSzSWCSuQTfYRIF84Rq/eV0G2+tu07byYwHcbTGfdmLrHjUSwvzp5HvbiqK4ibmNwdcG49Y5RGYPTg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inclusive+Sans&display=swap');
 
         body {
             background-color: black;
-            color: yellow;
+            color: #e6c07b;
             font-family: 'Inclusive Sans', sans-serif;
         }
+
+        div>pre:not(code):not(img) {
+            display: grid;
+            place-items: center;
+        }
     </style>
-    <title>
-        <%= name %>
+    <title id="name">
     </title>
+
 </head>
 
 <body>
-    <%- options.notes %>
+    <div>
+    </div>
+
+    <script type="module">
+        import hljs from 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/es/highlight.min.js';
+        //  and it's easy to individually load additional languages
+        import c from 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/es/languages/c.min.js';
+        hljs.registerLanguage('c', c);
+
+        const no = location.pathname.split('/')[1];
+        const notesraw = await fetch(`/notes/${no}`)
+        const notes = await notesraw.text();
+
+        document.getElementsByTagName("div")[0].innerHTML = notes
+
+        const elements = document.getElementsByTagName("c");
+        const fetchthese = [...elements];
+        const fetchall = [];
+
+        for (let i = 0; i < fetchthese.length; i++) {
+            const element = fetchthese[i];
+            const src = element.getAttribute("src");
+            if (!src) {
+                fetchall.push(new Promise((r, j) => r(element.innerHTML)));
+                continue;
+            }
+            fetchall.push(fetch(element.getAttribute("src")).then(e => e.text()));
+        }
+
+        document.getElementById("name").innerText = no
+
+        Promise.all(fetchall).then((arr) => {
+            for (let i = 0; i < arr.length; i++) {
+                fetchthese[i].innerHTML = `<pre><code class="language-cpp">${arr[i]}</code></pre>`;
+                if (i == arr.length - 1) hljs.highlightAll()
+            }
+        })
+    </script>
 </body>
 
 </html>

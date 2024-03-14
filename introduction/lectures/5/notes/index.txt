@@ -1,0 +1,61 @@
+🟩h1🟥 CS50x notes lecture 5
+
+🟩h2🟥 RGB
+
+Standard way of describing photo bits
+
+# hex code
+XX => red;
+YY => green;
+ZZ => blue;
+
+#XXYYZZ
+
+🟩h2🟥 Hexadecimal 
+from 0-9 A-f;
+example => 0,1,2,3,4,5,6,7,8,9,A,B,C,D,E,F
+
+🟩h4🟥 Suppose red;
+
+16^10 16
+X     X;
+
+combined => XX
+Max of combined => 256
+
+Each letter is 4 bits long
+therefore XX is 1 byte (8 bits)
+
+Now try address of a int
+
+🟩CODE_5_addresses🟥
+
+Pointer is just a integer that represents a value in the memory
+
+the string.h module contains the pointer to the start of the string
+the return value of a string type is the pointer to the null value of the string
+
+Example:
+🟩CODE_5_ad-str🟥
+
+removing the training wheels
+🟩CODE_5_ad-char🟥
+
+typedef enables to create data types
+🟩CODE_5_type🟥
+
+🟩h2🟥 Pointer arithmetic (Math on addresses)
+
+🟩CODE_5_ad-math🟥
+
+now compareing strings
+
+🟩CODE_5_compare🟥
+
+copy string
+
+🟩CODE_5_copy🟥
+
+NULL is at the start address of a computer
+
+Now with valgrind
